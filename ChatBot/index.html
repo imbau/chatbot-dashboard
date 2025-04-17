@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>JARVIS</title>
+</head>
+
+<body>
+
+  <div id="user-data" style="color: rgb(14, 12, 12); font-size: 14px; padding: 10px;"></div>
+
+  <div id="chat-toggle" onclick="toggleChat()">
+    🤖
+  </div>
+
+  <div id="chat-container" class="hidden">
+    <div class="chat-header">
+      <span>Desarrollado por Epika</span>
+      <button onclick="toggleChat()">✖</button>
+    </div>
+    <div id="chat" class="chat-box"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Escribí tu mensaje..." onkeypress="handleKey(event)" />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+  <!-- En tu index.html (antes de script.js) -->
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

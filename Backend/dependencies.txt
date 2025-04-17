@@ -1,0 +1,3 @@
+PHP >= 7.4
+Extensión PDO activada
+Servidor Apache/Nginx (recomendado XAMPP, WAMP o Laragon)

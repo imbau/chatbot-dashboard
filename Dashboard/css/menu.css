@@ -1,0 +1,17 @@
+/* Menú flotante */
+.floating-menu {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(to right, #252525, #222222);
+  padding: 0.6rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.floating-menu:hover {
+  background-color: #3d3d3d;
+}
