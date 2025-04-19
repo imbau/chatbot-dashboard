@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Epika Dashboard</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/splash.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Splash de inicio -->
+    <div class="splash-screen" id="splash">
+        <div class="logo-mask">
+            <img src="Epika SVG Blanco (Transparente).svg" alt="Epika Logo" class="logo-slide-in" />
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="app hidden" id="app">
+        <h1>Conversaciones</h1>
+        <div class="chat-list" id="chatList"></div>
+    </div>
+
+    <div id="chat-header" class="hidden">
+        <button id="backButton" class="back-button">←</button>
+        <span id="chatUsername" class="chat-username"></span>
+        <!-- Nuevo botón de estado -->
+        <div id="chatModeIndicator" class="mode-indicator">
+            <span id="modeIcon">🤖</span>
+        </div>
+    </div>
+
+    <!-- Cambiar el toggle actual por nuestro nuevo diseño -->
+    <div class="mode-switch-container hidden" id="modeSwitchContainer">
+        <button id="modeSwitchButton" class="mode-switch-button">
+            <span id="switchIcon">🔄</span>
+        </button>
+        <span id="modeStatusText" class="mode-status-text">Modo bot</span>
+    </div>
+
+    <div class="hidden" id="chatView">
+        <div class="chat-container">
+            <div class="messages" id="messages">
+                <!-- Aquí van los mensajes -->
+            </div>
+        </div>
+        <div class="input-area">
+            <input type="text" id="inputMessage" placeholder="Escribe un mensaje..." />
+            <button id="sendButton">
+                <?xml version="1.0" encoding="utf-8"?>
+                <!-- License: CC Attribution. Made by Ghani Pradita: https://dribbble.com/ghanipradita -->
+                <svg width="20px" height="20px" viewBox="0 -4.15 57.875 57.875" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Group_37" data-name="Group 37" transform="translate(-1209.722 -1357.465)">
+                        <path id="Path_95" data-name="Path 95" d="M1224.729,1387.963v16.4l26.032-28.734Z"
+                            fill="transparent" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="4" />
+                        <path id="Path_96" data-name="Path 96" d="M1228.118,1390.522l37.479-30.686-17.1,45.207Z"
+                            fill="transparent" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="4" />
+                        <path id="Path_97" data-name="Path 97" d="M1211.722,1378.673l16.4,11.712,37.479-30.92Z"
+                            fill="transparent" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="4" />
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sonido de intro -->
+    <audio id="intro-sound" src="Epika Start.wav"></audio>
+
+    <!-- Al final del body 
+    <div class="floating-menu" id="menuButton">
+        <span>Chats</span>
+    </div>-->
+    <div class="bottom-bar hidden" id="actionBar">
+        <button onclick="deleteSelectedChats()">🗑️</button>
+        <button onclick="pinSelectedChats()">📌</button>
+        <button onclick="infoSelectedChats()">ℹ️</button>
+    </div>
+
+    <div id="chat-controls">
+        <label class="switch">
+            <input type="checkbox" id="botToggle" checked />
+            <span class="slider"></span>
+        </label>
+        <span id="toggleStatus" class="toggle-status">Modo bot activado 🤖</span>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script type="module" src="home.js"></script>
+</body>
+
+</html>
